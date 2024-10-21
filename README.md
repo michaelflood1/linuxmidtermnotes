@@ -32,6 +32,7 @@
 [Positional Parameters.](#positional-parameters)  
 [Special Variables.](#special-variables)  
 [Command Line Arguments.](#command-line-arguments)  
+[Regex.](#regex)
 
 
 ## filesystem
@@ -699,3 +700,44 @@ cp [options] source destination
 | touch | create files | -c, -t |
 | mv | move files | -i, -f, -n |
 | cp | copy files | -r, -i, -v, -p |
+
+## regex
+
+#### [][]
+
+    [1][a] matches any two character string that the first character is 1 and second is a
+    [1-4][a-c] matches any two character string where the first character is between 1 and 4 and the second character is a-c
+    i.e 1a 3b 2c
+
+#### *
+
+    *.txt matches all file types that have .txt extension
+    egg* all
+
+
+### table
+
+| **Regex Pattern** | **Description**                                                  | **Example Matches**            |
+|-------------------|------------------------------------------------------------------|--------------------------------|
+| `.`               | Matches any single character except newline.                    | `a`, `1`, `#`                  |
+| `^abc`            | Matches "abc" at the **start** of a string.                    | `abc123`, `abc`                |
+| `abc$`            | Matches "abc" at the **end** of a string.                      | `123abc`, `abc`                |
+| `a*`              | Matches **zero or more** occurrences of "a".                   | `a`, `aa`, `aaa`, `""` (empty string) |
+| `a+`              | Matches **one or more** occurrences of "a".                    | `a`, `aa`, `aaa`               |
+| `a?`              | Matches **zero or one** occurrence of "a".                      | `a`, `""`                      |
+| `a{n}`            | Matches **exactly n** occurrences of "a".                       | `aaa` (where n=3)              |
+| `a{n,}`           | Matches **at least n** occurrences of "a".                      | `aaa`, `aaaaa` (where n=3)     |
+| `a{n,m}`          | Matches between **n and m** occurrences of "a".                | `aa`, `aaa`, `aaaa` (where n=2, m=4) |
+| `[abc]`           | Matches any **single character** listed inside the brackets.    | `a`, `b`, `c`, `1` (not `d`)   |
+| `[^abc]`          | Matches any **single character** **not** listed inside the brackets. | `1`, `2`, `d` (not `a`, `b`, `c`) |
+| `(abc)`           | Groups the characters "abc".                                    | Matches `abc` in `abc123`      |
+| `a|b`             | Matches either "a" or "b".                                      | `a`, `b`, but not `c`          |
+| `\d`              | Matches any **digit** (equivalent to `[0-9]`).                 | `0`, `5`, `9`                  |
+| `\D`              | Matches any **non-digit** character.                            | `a`, `#`, ` `                  |
+| `\w`              | Matches any **word character** (letters, digits, underscore).  | `a`, `A`, `1`, `_`             |
+| `\W`              | Matches any **non-word character**.                             | `#`, ` `, `!`                  |
+| `\s`              | Matches any **whitespace character** (spaces, tabs, newlines). | ` `, `\t`, `\n`                |
+| `\S`              | Matches any **non-whitespace character**.                       | `a`, `1`, `!`                  |
+| `(?=abc)`         | Positive lookahead for "abc".                                   | Matches position before `abc` in `xyzabc` |
+| `(?!abc)`         | Negative lookahead for "abc".                                   | Matches position not followed by `abc` |
+
