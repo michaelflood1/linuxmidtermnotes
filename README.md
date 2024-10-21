@@ -3,24 +3,24 @@ linux uses the forward / structure and is hierarchical from root directory to wo
 
 
 ## important directories
-root/
+#### root/
  the start of the tree.
-/boot
+#### /boot
 contains static files and stores data used before the kernel executes user mode programs
-/dev 
+#### /dev 
 contains special or device files
-/bin
+#### /bin
 executable files
-/etc
+#### /etc
 configuration files
-/home
-user
+#### /home
+#### /user
 home directories
-/lib
+#### /lib
 shared libraries
-/usr
+#### /usr
 user utilities and applications
-/var
+#### /var
 variable data such as logs or databases
 
 all items in linux are "files" there are different designations
