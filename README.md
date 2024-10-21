@@ -444,7 +444,7 @@ userdel [OPTIONS] <user-name>
 
 ### Modifying User Accounts
 
-    Set user password:
+### Set user password:
 
 passwd <user-name>
 
