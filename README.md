@@ -36,6 +36,121 @@
 [Quiz.](#questions)
 
 
+
+## based on email
+
+1. Basic Scripting Concepts
+Conditional Statements
+
+```bash
+    If Statement Example:
+
+    bash
+
+    if [ -f "/path/to/file" ]; then
+        echo "File exists."
+    else
+        echo "File does not exist."
+    fi
+
+Loops
+
+    For Loop Example:
+
+    bash
+
+for i in {1..5}; do
+    echo "Looping: $i"
+done
+
+While Loop Example:
+
+bash
+
+    count=1
+    while [ $count -le 5 ]; do
+        echo "Count: $count"
+        ((count++))
+    done
+
+Functions
+
+    Function Definition Example:
+
+    bash
+
+    my_function() {
+        echo "This is my function."
+    }
+    my_function
+```
+
+2. Filesystem Structure
+Key Locations:
+
+    User Information:
+        /etc/passwd - Contains user account information.
+    Other Important Directories:
+        /etc/shadow - Contains secure user account information (passwords).
+        /etc/group - Contains group account information.
+
+3. Command Structure
+
+    General Format:
+
+    bash
+
+command [options] [arguments]
+
+Example:
+
+bash
+
+    ls -l /home/user
+
+        ls: command
+        -l: option (long format)
+        /home/user: argument (path to list)
+
+4. File Permissions and Ownership
+
+    Ownership:
+        Each file can be owned by one user and one group.
+    Permissions:
+        User (Owner)
+        Group
+        Others
+        Common permissions:
+            Read (r)
+            Write (w)
+            Execute (x)
+    Example of Permissions:
+        drwxr-xr--
+            Owner: read, write, execute
+            Group: read, execute
+            Others: read
+
+5. Environment Variables vs. Regular Variables
+
+    Environment Variables:
+        Available to all child processes and affect the behavior of the shell and applications.
+        Example: PATH, HOME
+
+    Regular Variables:
+        Local to the shell or script in which they are defined.
+        Example: my_var="Hello"
+
+6. SSH Configuration
+
+    Why Restrict Root User SSH Access:
+        Security: Prevents brute-force attacks on the root account.
+        Encourages the use of normal user accounts for login and privilege escalation through sudo.
+
+7. General Cloud Topics
+
+    Example Question:
+        Why are we using the San Francisco region?
+        Possible Answer: The San Francisco region may be chosen for proximity to data centers, latency considerations, compliance regulations, or specific service availability.
 ## filesystem
 linux uses the forward / structure and is hierarchical from root directory to working directory
 
@@ -45,28 +160,75 @@ linux uses the forward / structure and is hierarchical from root directory to wo
  the start of the tree.
 #### /boot
 contains static files and stores data used before the kernel executes user mode programs
+
+    /boot/vmlinuz (the compressed Linux kernel image)
+    /boot/initrd.img (initial RAM disk image)
+    /boot/grub/grub.cfg (GRUB bootloader configuration file)
+
 #### /dev 
 contains special or device files
+
+    dev/null (the null device)
+    dev/sda (the first hard disk)
+    dev/tty (the terminal device)
+
 #### /bin
 executable files
+
+    /bin/bash (the Bourne Again SHell)
+    /bin/ls (command to list directory contents)
+    /bin/cp (command to copy files)
+
 #### /etc
 configuration files
+
+    /etc/passwd (user account information)
+    /etc/shadow hashed user info
+    /etc/hosts (static table of IP addresses and hostnames)
+    /etc/fstab (file system table)
+    /etc/group has group account info
+
 #### /home
-#### /user
 home directories
+
+    /home/user1/.bashrc (a configuration file for the bash shell for user1)
+    /home/user2/documents/report.txt (a text document for user2)
+    /home/user3/.ssh/authorized_keys (SSH authorized keys for user3)
+
+
 #### /lib
 shared libraries
+
+    /lib/libc.so.6 (the standard C library)
+    /lib/libm.so.6 (the mathematical library)
+    /lib/libpthread.so.0 (POSIX threads library)
+
 #### /usr
 user utilities and applications
+
+    /usr/bin/python3 (the Python 3 interpreter)
+    /usr/bin/git (the Git version control system)
+    /usr/bin/vim (the Vim text editor)
+
 #### /var
 variable data such as logs or databases
+
+    /var/log/syslog (system log file)
+    /var/www/html/index.html (default webpage for a web server)
+    /var/lib/mysql/mysql.sock (MySQL database socket file)
+
+
+
 
 all items in linux are "files" there are different designations
 - d directory
 - f file
 - l symbolic links
 
-symbolic links
+symbolic links point to name or location of a file
+hard link points to inode
+
+
 
     ln -s ~/Documents/config.yaml ~/config
     # creates
