@@ -658,8 +658,8 @@ usermod -aG <group-name> <user-name>
 
     bash
 
-    chmod 644 <file-name>          # Numeric method
-    chmod u=rw,g=r,o=r <file-name> # Symbolic method
+        chmod 644 <file-name>          # Numeric method
+        chmod u=rw,g=r,o=r <file-name> # Symbolic method
 
 ### Changing File Ownership
 
