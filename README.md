@@ -667,8 +667,8 @@ usermod -aG <group-name> <user-name>
 
     bash
 
-chown <user-name>:<group-name> <file-name> # Change both user and group
-chown :<group-name> <file-name>            # Change only group
+    chown <user-name>:<group-name> <file-name> # Change both user and group
+    chown :<group-name> <file-name>            # Change only group
 
 
 ## shell scripting basics
