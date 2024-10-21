@@ -484,12 +484,17 @@ Methods for communication
 - shared memory -multiple processes access same mem space
 - semaphores -used for controlling access to shared resources
 
-ps snapsots current processes
-ps -e views all processes
-ps -e | less
-ps -e | grep -i bash pulls all processes and searches the pattern to filter for bash
-ps -eo comm,pid,%cpu | grep -i systemd 
-ps -e --forest | grep -i ssh shows the heirarchy of processes for ssh
+    ps snapsots current processes
+
+    ps -e views all processes
+
+    ps -e | less
+
+    ps -e | grep -i bash pulls all processes and searches the pattern to filter for bash
+
+    ps -eo comm,pid,%cpu | grep -i systemd
+   
+    ps -e --forest | grep -i ssh shows the heirarchy of processes for ssh
 
 ## process scheduling
 Long term decided which process is admitted to system
