@@ -33,6 +33,7 @@
 [Special Variables.](#special-variables)  
 [Command Line Arguments.](#command-line-arguments)  
 [Regex.](#regex)
+[Quiz.](#questions)
 
 
 ## filesystem
@@ -740,4 +741,310 @@ cp [options] source destination
 | `\S`              | Matches any **non-whitespace character**.                       | `a`, `1`, `!`                  |
 | `(?=abc)`         | Positive lookahead for "abc".                                   | Matches position before `abc` in `xyzabc` |
 | `(?!abc)`         | Negative lookahead for "abc".                                   | Matches position not followed by `abc` |
+
+
+
+# Linux Process Control Quiz
+
+## Questions
+
+1. What command is used to view the currently running processes in Linux?
+   <details>
+   <summary>Answer</summary>
+   The `ps` command.
+   </details>
+
+2. How can you display detailed information about a specific process in Linux?
+   <details>
+   <summary>Answer</summary>
+   The `ps -p <PID>` command.
+   </details>
+
+3. What does the `top` command do in a Linux environment?
+   <details>
+   <summary>Answer</summary>
+   It provides a dynamic view of system processes.
+   </details>
+
+4. Explain the purpose of the `ps` command in Linux.
+   <details>
+   <summary>Answer</summary>
+   It displays information about active processes.
+   </details>
+
+5. What is the function of the `kill` command?
+   <details>
+   <summary>Answer</summary>
+   It is used to send a signal to a process, often to terminate it.
+   </details>
+
+6. Describe what a process ID (PID) is in Linux.
+   <details>
+   <summary>Answer</summary>
+   A unique identifier assigned to each process.
+   </details>
+
+7. What command can you use to terminate a process by its name?
+   <details>
+   <summary>Answer</summary>
+   The command `pkill <process_name>`.
+   </details>
+
+8. How can you run a command in the background in Linux?
+   <details>
+   <summary>Answer</summary>
+   By appending `&` to the command.
+   </details>
+
+9. What does the `&` symbol indicate when running a command in Linux?
+   <details>
+   <summary>Answer</summary>
+   It runs the command in the background.
+   </details>
+
+10. Explain the purpose of the `bg` command.
+    <details>
+    <summary>Answer</summary>
+    It resumes a suspended job in the background.
+    </details>
+
+11. What does the `fg` command do in a Linux shell?
+    <details>
+    <summary>Answer</summary>
+    It brings a background job to the foreground.
+    </details>
+
+12. Describe how you can pause a running process in Linux.
+    <details>
+    <summary>Answer</summary>
+    You can use the `kill -STOP <PID>` command.
+    </details>
+
+13. What signal is sent by the `kill` command by default?
+    <details>
+    <summary>Answer</summary>
+    The `SIGTERM` signal.
+    </details>
+
+14. What does the command `nohup` do in a Linux context?
+    <details>
+    <summary>Answer</summary>
+    It allows a command to continue running after the user logs out.
+    </details>
+
+15. How do you check the status of a background job in Linux?
+    <details>
+    <summary>Answer</summary>
+    By using the `jobs` command.
+    </details>
+
+16. What is the purpose of the `nice` command?
+    <details>
+    <summary>Answer</summary>
+    It sets the scheduling priority of a process.
+    </details>
+
+17. Explain what a zombie process is in Linux.
+    <details>
+    <summary>Answer</summary>
+    It is a process that has completed execution but still has an entry in the process table.
+    </details>
+
+18. How can you prevent a process from being killed by the user?
+    <details>
+    <summary>Answer</summary>
+    By changing its permissions or using `nohup`.
+    </details>
+
+19. What command is used to change the priority of a running process?
+    <details>
+    <summary>Answer</summary>
+    The `renice` command.
+    </details>
+
+20. Describe the function of the `nice` and `renice` commands.
+    <details>
+    <summary>Answer</summary>
+    `nice` sets the priority for a command at start, while `renice` changes it for running processes.
+    </details>
+
+21. What is the significance of the `/proc` filesystem in Linux?
+    <details>
+    <summary>Answer</summary>
+    It contains information about processes and system resources.
+    </details>
+
+22. How can you find out how much CPU a process is using?
+    <details>
+    <summary>Answer</summary>
+    By using the `top` or `htop` commands.
+    </details>
+
+23. What does the `pstree` command display?
+    <details>
+    <summary>Answer</summary>
+    It displays a tree-like structure of processes.
+    </details>
+
+24. How can you see which processes are using a specific file in Linux?
+    <details>
+    <summary>Answer</summary>
+    By using the `fuser` command.
+    </details>
+
+25. Explain the role of the `at` command in scheduling tasks.
+    <details>
+    <summary>Answer</summary>
+    It schedules commands to run at a specific time.
+    </details>
+
+26. What does the `cron` service do in a Linux environment?
+    <details>
+    <summary>Answer</summary>
+    It runs scheduled tasks at regular intervals.
+    </details>
+
+27. Describe how to start a process at boot time in Linux.
+    <details>
+    <summary>Answer</summary>
+    By placing scripts in the `/etc/init.d/` directory.
+    </details>
+
+28. What is the purpose of the `systemctl` command?
+    <details>
+    <summary>Answer</summary>
+    It manages system services and units.
+    </details>
+
+29. How do you list all running services in a Linux system?
+    <details>
+    <summary>Answer</summary>
+    The command `systemctl list-units --type=service`.
+    </details>
+
+30. What command can be used to stop a service in Linux?
+    <details>
+    <summary>Answer</summary>
+    The command `systemctl stop <service-name>`.
+    </details>
+
+31. How do you restart a service using the command line in Linux?
+    <details>
+    <summary>Answer</summary>
+    The command `systemctl restart <service-name>`.
+    </details>
+
+32. What does the command `service <service-name> status` do?
+    <details>
+    <summary>Answer</summary>
+    It checks the running status of a service.
+    </details>
+
+33. Explain the difference between a process and a thread in Linux.
+    <details>
+    <summary>Answer</summary>
+    A process is an independent execution unit, while a thread is a lightweight process that shares resources.
+    </details>
+
+34. How can you check memory usage of processes in Linux?
+    <details>
+    <summary>Answer</summary>
+    The `top` command displays memory usage.
+    </details>
+
+35. What is the purpose of the `pstree` command in Linux?
+    <details>
+    <summary>Answer</summary>
+    It displays the process tree in a hierarchical format.
+    </details>
+
+36. How do you monitor disk usage of processes in Linux?
+    <details>
+    <summary>Answer</summary>
+    The `iotop` command can be used to monitor disk usage.
+    </details>
+
+37. What does the `lsof` command do in relation to processes?
+    <details>
+    <summary>Answer</summary>
+    It lists open files and their associated processes.
+    </details>
+
+38. Describe how to change the ownership of a process in Linux.
+    <details>
+    <summary>Answer</summary>
+    You can use the `chown` command, but it generally applies to files, not processes directly.
+    </details>
+
+39. What is the purpose of the `killall` command?
+    <details>
+    <summary>Answer</summary>
+    It terminates all processes with a given name.
+    </details>
+
+40. How can you find the parent process of a given PID?
+    <details>
+    <summary>Answer</summary>
+    By using the command `ps -o ppid= -p <PID>`.
+    </details>
+
+41. What signal is sent by the `SIGKILL` command?
+    <details>
+    <summary>Answer</summary>
+    It forcefully kills a process.
+    </details>
+
+42. Explain the significance of the `ctrl + Z` keyboard shortcut in Linux.
+    <details>
+    <summary>Answer</summary>
+    It suspends the currently running foreground process.
+    </details>
+
+43. How do you list all user processes in Linux?
+    <details>
+    <summary>Answer</summary>
+    By using the command `ps -u <username>`.
+    </details>
+
+44. What is the difference between foreground and background processes?
+    <details>
+    <summary>Answer</summary>
+    Foreground processes interact with the user; background processes do not.
+    </details>
+
+45. How can you execute a command with elevated privileges in Linux?
+    <details>
+    <summary>Answer</summary>
+    The command `sudo <command>`.
+    </details>
+
+46. What command can you use to see the system uptime in Linux?
+    <details>
+    <summary>Answer</summary>
+    The `uptime` command.
+    </details>
+
+47. Describe how to view the environment variables of a process in Linux.
+    <details>
+    <summary>Answer</summary>
+    The command `cat /proc/<PID>/environ`.
+    </details>
+
+48. How can you limit the CPU usage of a process in Linux?
+    <details>
+    <summary>Answer</summary>
+    Using `cpulimit` or `nice`.
+    </details>
+
+49. What command can be used to schedule a command to run at a specific time?
+    <details>
+    <summary>Answer</summary>
+    The `at` command.
+    </details>
+
+50. Explain how to view real-time system resource usage in Linux.
+    <details>
+    <summary>Answer</summary>
+    The `htop` or `top` command.
+    </details>
 
